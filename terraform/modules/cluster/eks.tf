@@ -95,6 +95,7 @@ module "eks_blueprints" {
     mg_5 = {
       node_group_name = "managed-ondemand"
       instance_types  = ["m5.large"]
+      #instance_types  = ["t2.medium"]
       capacity_type = "SPOT"
       subnet_ids      = local.private_subnet_ids
       min_size        = local.default_mng_min
@@ -113,6 +114,7 @@ module "eks_blueprints" {
     system = {
       node_group_name = "managed-system"
       instance_types  = ["m5.large"]
+      #instance_types  = ["t2.medium"]
       capacity_type = "SPOT"
       subnet_ids      = local.primary_private_subnet_id
       min_size        = 1
@@ -133,6 +135,7 @@ module "eks_blueprints" {
     mg_tainted = {
       node_group_name = "managed-ondemand-tainted"
       instance_types  = ["m5.large"]
+      #instance_types  = ["t2.medium"]
       capacity_type = "SPOT"
       subnet_ids      = local.private_subnet_ids
       min_size        = 0
